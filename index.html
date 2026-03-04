@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aplikatif — Jasa pembuatan web app dari Excel. Mulai Rp 75.000. Konsultasi gratis, hasil cepat." />
+  <title>Aplikatif — Bikin Aplikasi dari Excel? Bisa. Mulai Rp 75.000.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              indigo: '#4F46E5',
+              emerald: '#10B981',
+              dark: '#1E293B',
+              light: '#F9FAFB',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .countdown-box {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .gradient-hero {
+      background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+    }
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(79,70,229,0.15);
+    }
+    .wa-float {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 999;
+      animation: pulse-wa 2s infinite;
+    }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      50% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-brand-dark antialiased">
+
+  <!-- ===== PROMO BANNER ===== -->
+  <div class="bg-brand-emerald text-white text-center px-4 py-2.5 text-sm font-semibold flex flex-wrap items-center justify-center gap-2">
+    <span>🎉 Gratis hosting <span class="underline decoration-dotted">3 bulan pertama</span> — berakhir dalam:</span>
+    <span id="banner-countdown" class="font-mono font-bold tracking-wide text-yellow-300">--:--:--:--</span>
+    <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20klaim%20promo%20gratis%20hosting%203%20bulan%20🙏"
+       target="_blank" class="bg-white text-brand-emerald text-xs font-bold px-2.5 py-1 rounded-full">
+      Klaim →
+    </a>
+  </div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 px-5 py-3 flex items-center justify-between">
+    <a href="#" class="text-xl font-bold text-brand-indigo tracking-tight">aplikatif<span class="text-brand-emerald">.</span></a>
+    <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20konsultasi%20gratis%20🙏"
+       target="_blank"
+       class="bg-brand-emerald text-white text-sm font-semibold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">
+      Konsultasi Gratis
+    </a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="gradient-hero text-white px-5 pt-14 pb-16 text-center">
+    <span class="inline-block bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-2">
+      🚀 Mulai dari Rp 75.000
+    </span>
+    <br/>
+    <span class="inline-block bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full mb-4">
+      🎉 Promo: Gratis hosting 3 bulan untuk pemesanan baru!
+    </span>
+    <h1 class="text-3xl sm:text-4xl font-extrabold leading-tight mb-3">
+      Bikin Aplikasi dari Excel?<br/>Bisa. Mulai Rp 75.000.
+    </h1>
+    <p class="text-white/85 text-base mb-8 max-w-sm mx-auto">
+      Kami ubah file Excel kamu jadi web app yang bisa diakses dari HP — cepat, murah, dan langsung siap pakai.
+    </p>
+    <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20konsultasi%20gratis%20🙏"
+       target="_blank"
+       class="inline-flex items-center gap-2 bg-brand-emerald text-white font-bold text-base px-7 py-3.5 rounded-full shadow-lg active:scale-95 transition mb-4">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.198-1.447A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.378l-.36-.214-3.68.859.924-3.574-.234-.368A9.818 9.818 0 1112 21.818z"/></svg>
+      Chat WhatsApp Sekarang
+    </a>
+    <p class="text-white/60 text-xs">Respon dalam 1 jam kerja</p>
+  </section>
+
+  <!-- ===== PAIN POINT ===== -->
+  <section class="bg-brand-light px-5 py-12 text-center">
+    <h2 class="text-xl font-bold mb-2">Masih pakai Excel untuk ini?</h2>
+    <p class="text-gray-500 text-sm mb-8">Wajar — tapi ada cara yang lebih baik.</p>
+    <div class="grid grid-cols-2 gap-3 max-w-sm mx-auto">
+      <div class="bg-white rounded-2xl p-4 text-left shadow-sm">
+        <div class="text-2xl mb-2">😰</div>
+        <p class="text-sm font-semibold text-gray-700">File sering corrupt atau terhapus</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-left shadow-sm">
+        <div class="text-2xl mb-2">🤯</div>
+        <p class="text-sm font-semibold text-gray-700">Susah diakses banyak orang sekaligus</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-left shadow-sm">
+        <div class="text-2xl mb-2">❌</div>
+        <p class="text-sm font-semibold text-gray-700">Tidak ada validasi, error mudah terjadi</p>
+      </div>
+      <div class="bg-white rounded-2xl p-4 text-left shadow-sm">
+        <div class="text-2xl mb-2">📊</div>
+        <p class="text-sm font-semibold text-gray-700">Laporan harus dibuat manual tiap bulan</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUSI ===== -->
+  <section class="px-5 py-12 text-center">
+    <span class="inline-block bg-indigo-100 text-brand-indigo text-xs font-bold px-3 py-1 rounded-full mb-3">Solusi Kami</span>
+    <h2 class="text-2xl font-extrabold mb-2">Kami ubah jadi web app<br/>yang bisa langsung dipakai</h2>
+    <p class="text-gray-500 text-sm mb-8 max-w-xs mx-auto">Berbasis data & kebiasaan kerja kamu — bukan template generik.</p>
+    <div class="space-y-4 max-w-sm mx-auto text-left">
+      <div class="flex items-start gap-4 bg-indigo-50 rounded-2xl p-4">
+        <span class="text-2xl">📋</span>
+        <div>
+          <p class="font-semibold text-sm">Kas Harian</p>
+          <p class="text-gray-500 text-xs mt-0.5">Input pemasukan & pengeluaran, saldo otomatis, laporan bulanan</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-emerald-50 rounded-2xl p-4">
+        <span class="text-2xl">🧾</span>
+        <div>
+          <p class="font-semibold text-sm">Invoice Generator</p>
+          <p class="text-gray-500 text-xs mt-0.5">Buat & kirim invoice PDF, tracking status pembayaran</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-indigo-50 rounded-2xl p-4">
+        <span class="text-2xl">📝</span>
+        <div>
+          <p class="font-semibold text-sm">Form Collector</p>
+          <p class="text-gray-500 text-xs mt-0.5">Form input data custom, rekapitulasi otomatis ke tabel</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-emerald-50 rounded-2xl p-4">
+        <span class="text-2xl">💼</span>
+        <div>
+          <p class="font-semibold text-sm">Buku Piutang & Hutang</p>
+          <p class="text-gray-500 text-xs mt-0.5">Catat hutang piutang, reminder jatuh tempo otomatis</p>
+        </div>
+      </div>
+      <div class="flex items-start gap-4 bg-indigo-50 rounded-2xl p-4">
+        <span class="text-2xl">📊</span>
+        <div>
+          <p class="font-semibold text-sm">Laporan Keuangan</p>
+          <p class="text-gray-500 text-xs mt-0.5">Rekap pemasukan & pengeluaran dengan grafik visual</p>
+        </div>
+      </div>
+    </div>
+    <p class="text-gray-400 text-xs mt-6">Tidak ada yang cocok? Ceritakan kebutuhanmu — kami buat dari nol.</p>
+  </section>
+
+  <!-- ===== HARGA ===== -->
+  <section id="harga" class="bg-brand-light px-5 py-12">
+    <div class="text-center mb-8">
+      <span class="inline-block bg-emerald-100 text-brand-emerald text-xs font-bold px-3 py-1 rounded-full mb-3">Harga Transparan</span>
+      <h2 class="text-2xl font-extrabold">Mulai dari Rp 75.000</h2>
+      <p class="text-gray-500 text-sm mt-1">Harga terjangkau, hasil profesional</p>
+    </div>
+
+    <!-- Development -->
+    <div class="space-y-4 max-w-sm mx-auto mb-8">
+      <h3 class="font-bold text-sm text-gray-400 uppercase tracking-wider">Biaya Pengembangan (Sekali Bayar)</h3>
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover border-2 border-brand-indigo relative">
+        <span class="absolute -top-3 left-5 bg-brand-indigo text-white text-xs font-bold px-3 py-1 rounded-full">Paling Populer</span>
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Starter</p>
+          <p class="text-brand-indigo font-extrabold text-lg">Rp 75.000</p>
+        </div>
+        <p class="text-gray-500 text-sm">1 template standar, fitur dasar, tanpa kustomisasi</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Basic</p>
+          <p class="text-brand-indigo font-extrabold text-lg">Rp 150rb – 300rb</p>
+        </div>
+        <p class="text-gray-500 text-sm">Kustomisasi ringan: warna, field, logo, nama bisnis</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover">
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Custom</p>
+          <p class="text-brand-indigo font-extrabold text-lg">Rp 500rb+</p>
+        </div>
+        <p class="text-gray-500 text-sm">Fitur tambahan, integrasi, logika kompleks sesuai bisnis kamu</p>
+      </div>
+    </div>
+
+    <!-- Hosting -->
+    <div class="space-y-4 max-w-sm mx-auto">
+      <div class="flex items-center justify-between">
+        <h3 class="font-bold text-sm text-gray-400 uppercase tracking-wider">Hosting Bulanan</h3>
+        <span class="bg-red-100 text-red-500 text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">🔥 Promo Aktif</span>
+      </div>
+
+      <!-- Promo notice + Countdown -->
+      <div class="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl p-5 text-center text-white shadow-md">
+        <p class="font-bold text-base mb-1">🎉 Gratis Hosting 3 Bulan Pertama!</p>
+        <p class="text-white/80 text-xs mb-4">Berlaku untuk semua paket · Terbatas untuk pemesanan baru</p>
+        <p class="text-white/70 text-xs font-semibold uppercase tracking-widest mb-2">Promo berakhir dalam</p>
+        <div class="flex justify-center gap-2" id="main-countdown">
+          <div class="countdown-box rounded-xl px-3 py-2 min-w-[56px]">
+            <p class="text-2xl font-extrabold leading-none" id="cd-days">--</p>
+            <p class="text-white/70 text-xs mt-1">Hari</p>
+          </div>
+          <div class="text-2xl font-extrabold self-center pb-1">:</div>
+          <div class="countdown-box rounded-xl px-3 py-2 min-w-[56px]">
+            <p class="text-2xl font-extrabold leading-none" id="cd-hours">--</p>
+            <p class="text-white/70 text-xs mt-1">Jam</p>
+          </div>
+          <div class="text-2xl font-extrabold self-center pb-1">:</div>
+          <div class="countdown-box rounded-xl px-3 py-2 min-w-[56px]">
+            <p class="text-2xl font-extrabold leading-none" id="cd-minutes">--</p>
+            <p class="text-white/70 text-xs mt-1">Menit</p>
+          </div>
+          <div class="text-2xl font-extrabold self-center pb-1">:</div>
+          <div class="countdown-box rounded-xl px-3 py-2 min-w-[56px]">
+            <p class="text-2xl font-extrabold leading-none" id="cd-seconds">--</p>
+            <p class="text-white/70 text-xs mt-1">Detik</p>
+          </div>
+        </div>
+        <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20klaim%20promo%20gratis%20hosting%203%20bulan%20🙏"
+           target="_blank"
+           class="inline-block mt-4 bg-white text-brand-emerald text-sm font-bold px-5 py-2 rounded-full active:scale-95 transition">
+          Klaim Promo Sekarang →
+        </a>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover border border-emerald-100">
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Nano</p>
+          <div class="text-right">
+            <p class="text-gray-300 text-sm line-through">Rp 5.000/bln</p>
+            <p class="text-brand-emerald font-extrabold text-lg">Gratis <span class="text-sm font-semibold">3 bln</span></p>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm">Cocok untuk aplikasi sederhana dengan 1–3 pengguna</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover border border-emerald-100">
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Micro</p>
+          <div class="text-right">
+            <p class="text-gray-300 text-sm line-through">Rp 15.000/bln</p>
+            <p class="text-brand-emerald font-extrabold text-lg">Gratis <span class="text-sm font-semibold">3 bln</span></p>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm">Kapasitas lebih besar, custom domain, PWA tersedia</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-5 shadow-sm card-hover border border-emerald-100">
+        <div class="flex justify-between items-start mb-2">
+          <p class="font-bold text-base">Small Biz</p>
+          <div class="text-right">
+            <p class="text-gray-300 text-sm line-through">Rp 35.000/bln</p>
+            <p class="text-brand-emerald font-extrabold text-lg">Gratis <span class="text-sm font-semibold">3 bln</span></p>
+          </div>
+        </div>
+        <p class="text-gray-500 text-sm">Resource dedicated, priority support</p>
+      </div>
+
+      <p class="text-center text-gray-400 text-xs">*Setelah 3 bulan, hosting kembali ke harga normal</p>
+    </div>
+
+    <div class="mt-8 text-center">
+      <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20tanya%20harga%20lebih%20detail%20🙏"
+         target="_blank"
+         class="inline-flex items-center gap-2 bg-brand-indigo text-white font-bold px-7 py-3.5 rounded-full shadow active:scale-95 transition">
+        Tanya Harga via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="px-5 py-12 text-center">
+    <span class="inline-block bg-indigo-100 text-brand-indigo text-xs font-bold px-3 py-1 rounded-full mb-3">Cara Kerja</span>
+    <h2 class="text-2xl font-extrabold mb-8">Dari konsultasi ke aplikasi,<br/>dalam hitungan hari</h2>
+    <div class="space-y-5 max-w-sm mx-auto text-left">
+      <div class="flex gap-4 items-start">
+        <div class="w-9 h-9 rounded-full bg-brand-indigo text-white font-bold text-sm flex items-center justify-center flex-shrink-0">1</div>
+        <div>
+          <p class="font-semibold">Konsultasi Gratis</p>
+          <p class="text-gray-500 text-sm mt-0.5">Ceritakan kebutuhanmu via WhatsApp. Kami bantu analisa & tentukan solusi terbaik.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-9 h-9 rounded-full bg-brand-indigo text-white font-bold text-sm flex items-center justify-center flex-shrink-0">2</div>
+        <div>
+          <p class="font-semibold">Pilih Paket & Bayar</p>
+          <p class="text-gray-500 text-sm mt-0.5">Sepakati scope & harga, transfer pembayaran — selesai, proses dimulai.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-9 h-9 rounded-full bg-brand-indigo text-white font-bold text-sm flex items-center justify-center flex-shrink-0">3</div>
+        <div>
+          <p class="font-semibold">Development</p>
+          <p class="text-gray-500 text-sm mt-0.5">Kami kerjakan aplikasimu. Paket Starter bisa selesai dalam 1 hari kerja.</p>
+        </div>
+      </div>
+      <div class="flex gap-4 items-start">
+        <div class="w-9 h-9 rounded-full bg-brand-emerald text-white font-bold text-sm flex items-center justify-center flex-shrink-0">✓</div>
+        <div>
+          <p class="font-semibold">Terima & Pakai!</p>
+          <p class="text-gray-500 text-sm mt-0.5">Kamu dapat URL aplikasi di subdomain <span class="font-mono text-xs bg-gray-100 px-1 rounded">kamu.aplikatif.com</span> — langsung bisa diakses dari HP manapun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA FINAL ===== -->
+  <section class="gradient-hero px-5 py-14 text-center text-white">
+    <h2 class="text-2xl font-extrabold mb-3">Bikin aplikasi dari Excel?<br/>Yuk, mulai sekarang.</h2>
+    <p class="text-white/80 text-sm mb-8 max-w-xs mx-auto">Konsultasi gratis, tanpa komitmen. Ceritakan kebutuhanmu dan kami bantu carikan solusinya.</p>
+    <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20konsultasi%20gratis%20🙏"
+       target="_blank"
+       class="inline-flex items-center gap-2 bg-white text-brand-indigo font-bold text-base px-7 py-3.5 rounded-full shadow-lg active:scale-95 transition mb-3">
+      <svg class="w-5 h-5 text-brand-emerald" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.198-1.447A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.378l-.36-.214-3.68.859.924-3.574-.234-.368A9.818 9.818 0 1112 21.818z"/></svg>
+      Konsultasi Gratis Sekarang
+    </a>
+    <p class="text-white/50 text-xs">Respon dalam 1 jam kerja · Tidak ada biaya konsultasi</p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="px-5 py-8 text-center border-t border-gray-100">
+    <p class="text-brand-indigo font-bold text-lg mb-1">aplikatif<span class="text-brand-emerald">.</span></p>
+    <p class="text-gray-400 text-xs mb-3">Jasa pembuatan web app dari Excel · aplikatif.com</p>
+    <a href="https://wa.me/6285646645065" target="_blank" class="text-brand-emerald text-sm font-semibold">
+      0856-4664-5065
+    </a>
+    <p class="text-gray-300 text-xs mt-4">© 2026 Aplikatif. All rights reserved.</p>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT BUTTON ===== -->
+  <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20konsultasi%20gratis%20🙏"
+     target="_blank"
+     class="wa-float flex items-center justify-center w-14 h-14 bg-brand-emerald rounded-full shadow-xl">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.198-1.447A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.378l-.36-.214-3.68.859.924-3.574-.234-.368A9.818 9.818 0 1112 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- ===== COUNTDOWN SCRIPT ===== -->
+  <script>
+    const PROMO_DURATION_MS = 3 * 24 * 60 * 60 * 1000; // 3 hari
+    const STORAGE_KEY = 'aplikatif_promo_end';
+
+    // Ambil atau buat deadline personal
+    let promoEnd = parseInt(localStorage.getItem(STORAGE_KEY));
+    if (!promoEnd || isNaN(promoEnd)) {
+      promoEnd = Date.now() + PROMO_DURATION_MS;
+      localStorage.setItem(STORAGE_KEY, promoEnd);
+    }
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function showExpired() {
+      const banner = document.getElementById('banner-countdown');
+      if (banner) banner.textContent = 'BERAKHIR';
+      const mainCd = document.getElementById('main-countdown');
+      if (mainCd) mainCd.innerHTML = '<p class="text-white font-bold text-sm">Promo telah berakhir 😔</p>';
+    }
+
+    function updateCountdown() {
+      const diff = promoEnd - Date.now();
+
+      if (diff <= 0) {
+        showExpired();
+        return;
+      }
+
+      const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      // Banner (compact)
+      const banner = document.getElementById('banner-countdown');
+      if (banner) banner.textContent = `${pad(days)}h ${pad(hours)}j ${pad(minutes)}m ${pad(seconds)}d`;
+
+      // Main countdown boxes
+      const elDays    = document.getElementById('cd-days');
+      const elHours   = document.getElementById('cd-hours');
+      const elMinutes = document.getElementById('cd-minutes');
+      const elSeconds = document.getElementById('cd-seconds');
+
+      if (elDays)    elDays.textContent    = pad(days);
+      if (elHours)   elHours.textContent   = pad(hours);
+      if (elMinutes) elMinutes.textContent = pad(minutes);
+      if (elSeconds) elSeconds.textContent = pad(seconds);
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
