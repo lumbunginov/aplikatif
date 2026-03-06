@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Aplikatif — Jasa pembuatan web app dari Excel. Mulai Rp 75.000. Konsultasi gratis, hasil cepat." />
   <title>Aplikatif — Bikin Aplikasi dari Excel? Bisa. Mulai Rp 75.000.</title>
+  <link rel="icon" type="image/png" href="assets/images/logo/logo.png" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -26,6 +27,24 @@
     }
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1585569462670499');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1585569462670499&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
   <style>
     html { scroll-behavior: smooth; }
     .countdown-box {
@@ -55,6 +74,23 @@
       50% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
     }
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1823575268352823');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1823575268352823&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="font-sans bg-white text-brand-dark antialiased">
 
@@ -70,7 +106,9 @@
 
   <!-- ===== NAVBAR ===== -->
   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 px-5 py-3 flex items-center justify-between">
-    <a href="#" class="text-xl font-bold text-brand-indigo tracking-tight">aplikatif<span class="text-brand-emerald">.</span></a>
+    <a href="#" class="flex items-center gap-2">
+      <img src="assets/images/logo/logo.png" alt="Aplikatif" class="h-8 w-auto" />
+    </a>
     <a href="https://wa.me/6285646645065?text=Halo%20Aplikatif%2C%20saya%20mau%20konsultasi%20gratis%20🙏"
        target="_blank"
        class="bg-brand-emerald text-white text-sm font-semibold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">
@@ -412,6 +450,13 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+    // Meta Pixel — track WhatsApp clicks as Lead event
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        fbq('track', 'Lead');
+      });
+    });
   </script>
 
 </body>
