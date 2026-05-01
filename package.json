@@ -1,5 +1,6 @@
 {
   "name": "aplikatif-landing",
+  "description": "Landing page aplikatif.com — jasa pembuatan web app dari Excel",
   "version": "1.0.0",
   "scripts": {
     "build": "tailwindcss -i src/input.css -o dist/style.css --minify",
