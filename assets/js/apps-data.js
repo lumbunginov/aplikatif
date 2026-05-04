@@ -1,0 +1,99 @@
+var APPS_DATA = [
+  {
+    slug: 'keuangan-sederhana',
+    nama: 'Keuangan Sederhana',
+    kategori: 'Keuangan',
+    thumbnail: '/assets/images/showcase/keuangan-sederhana.png',
+    deskripsi_singkat: 'Input pemasukan & pengeluaran, saldo otomatis, laporan bulanan.',
+    deskripsi_panjang:
+      'Aplikasi pencatatan keuangan harian untuk UMKM. Cocok untuk warung, toko kecil, atau usaha jasa yang butuh tracking arus kas tanpa ribet.',
+    fitur_utama: [
+      'Input transaksi pemasukan & pengeluaran',
+      'Kalkulasi saldo otomatis',
+      'Kategori transaksi custom',
+      'Laporan bulanan dengan grafik',
+      'Export ke Excel/PDF',
+    ],
+    demo_url: 'https://keuanganku.aplikatif.com',
+    demo_live: true,
+    cocok_untuk: ['Warung', 'Toko kecil', 'Usaha jasa', 'Freelancer'],
+    estimasi_harga: 'Mulai Rp 75.000',
+  },
+  {
+    slug: 'manajemen-kost',
+    nama: 'Manajemen Kost',
+    kategori: 'Operasional',
+    thumbnail: '/assets/images/showcase/manajemen-kost.png',
+    deskripsi_singkat: 'Kelola kamar, penghuni, dan tagihan sewa — semua di satu tempat.',
+    deskripsi_panjang:
+      'Aplikasi manajemen kost digital untuk pemilik kost. Pantau status hunian setiap kamar, catat data penghuni, tagih sewa bulanan, dan terima reminder otomatis jatuh tempo — tanpa perlu buku catatan.',
+    fitur_utama: [
+      'Daftar kamar & status hunian (kosong/terisi)',
+      'Data lengkap penghuni per kamar',
+      'Tagihan sewa bulanan otomatis',
+      'Reminder jatuh tempo ke WhatsApp',
+      'Laporan pendapatan bulanan',
+    ],
+    demo_url: 'https://bukost.aplikatif.com',
+    demo_live: true,
+    cocok_untuk: ['Pemilik kost', 'Pengelola kontrakan', 'Pemilik kost bulanan/harian'],
+    estimasi_harga: 'Mulai Rp 150.000',
+  },
+  {
+    slug: 'invoice-generator',
+    nama: 'Invoice Generator',
+    kategori: 'Penjualan',
+    thumbnail: '/assets/images/showcase/invoice-generator.png',
+    deskripsi_singkat: 'Buat & kirim invoice PDF, tracking status pembayaran.',
+    deskripsi_panjang:
+      'Sistem invoicing profesional untuk freelancer dan UMKM. Generate invoice PDF dengan branding sendiri, kirim via WhatsApp/Email, dan track status pembayaran.',
+    fitur_utama: [
+      'Template invoice profesional',
+      'Generate PDF otomatis',
+      'Tracking status: Draft / Terkirim / Dibayar / Overdue',
+      'Reminder pembayaran otomatis',
+      'Database klien',
+    ],
+    demo_url: 'https://demo-invoice.aplikatif.com', // TODO: deploy demo
+    cocok_untuk: ['Freelancer', 'Konsultan', 'Agency', 'Vendor'],
+    estimasi_harga: 'Mulai Rp 150.000',
+  },
+  {
+    slug: 'form-collector',
+    nama: 'Form Collector',
+    kategori: 'Operasional',
+    thumbnail: '/assets/images/showcase/form-collector.png',
+    deskripsi_singkat: 'Form input data custom, rekapitulasi otomatis ke tabel.',
+    deskripsi_panjang:
+      'Pengganti Google Form dengan kemampuan rekap otomatis dan dashboard. Cocok untuk pendaftaran event, survey pelanggan, order custom, dan lainnya.',
+    fitur_utama: [
+      'Form builder drag-and-drop',
+      'Multiple jenis field (text, dropdown, file upload, dll)',
+      'Auto-rekap ke tabel',
+      'Dashboard analytics',
+      'Export ke Excel',
+    ],
+    demo_url: 'https://demo-form.aplikatif.com', // TODO: deploy demo
+    cocok_untuk: ['Event organizer', 'Komunitas', 'Toko online', 'Sekolah/kursus'],
+    estimasi_harga: 'Mulai Rp 150.000',
+  },
+  {
+    slug: 'laporan-keuangan',
+    nama: 'Laporan Keuangan',
+    kategori: 'Keuangan',
+    thumbnail: '/assets/images/showcase/laporan-keuangan.png',
+    deskripsi_singkat: 'Rekap pemasukan & pengeluaran dengan grafik visual.',
+    deskripsi_panjang:
+      'Dashboard laporan keuangan otomatis dari data transaksi. Lihat tren bulanan, kategori pengeluaran terbesar, dan kesehatan keuangan bisnis dengan grafik interaktif.',
+    fitur_utama: [
+      'Dashboard real-time',
+      'Grafik tren bulanan/tahunan',
+      'Breakdown per kategori',
+      'Profit & loss statement sederhana',
+      'Export PDF untuk laporan',
+    ],
+    demo_url: 'https://demo-laporan.aplikatif.com', // TODO: deploy demo
+    cocok_untuk: ['UMKM growing', 'Freelancer', 'Reseller online'],
+    estimasi_harga: 'Mulai Rp 200.000',
+  },
+];

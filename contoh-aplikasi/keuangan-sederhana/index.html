@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Aplikasi — Aplikatif</title>
+  <meta name="description" content="Detail dan demo aplikasi dari Aplikatif." />
+  <link rel="icon" type="image/png" href="../../assets/images/logo/logo.png" />
+  <link rel="stylesheet" href="../../dist/style.css" />
+  <style>
+    @font-face {
+      font-family: 'Inter';
+      src: url('../../assets/fonts/inter.woff2') format('woff2');
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    html { scroll-behavior: smooth; }
+    .gradient-hero { background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); }
+    .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(79,70,229,0.15); }
+    .wa-float {
+      position: fixed; bottom: 24px; right: 20px; z-index: 999;
+      animation: pulse-wa 2s infinite;
+    }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(16,185,129,0.5); }
+      50% { box-shadow: 0 0 0 12px rgba(16,185,129,0); }
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-brand-dark antialiased">
+
+  <!-- PROMO BANNER -->
+  <div class="bg-brand-emerald text-white text-center px-4 py-2.5 text-sm font-semibold flex flex-wrap items-center justify-center gap-2">
+    <span>🎁 Gratis hosting <span class="underline decoration-dotted">3 bulan</span> untuk 50 klien pertama bulan ini · Tersisa <strong>23</strong> slot</span>
+    <a href="https://wa.me/6285646645065?text=Halo%2C%20saya%20mau%20klaim%20promo%20gratis%20hosting%203%20bulan%20untuk%20pesanan%20baru.%20Bisnis%20saya%3A%20%5Btulis%20di%20sini%5D"
+       target="_blank" class="bg-white text-brand-emerald text-xs font-bold px-2.5 py-1 rounded-full">
+      Klaim →
+    </a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100 px-5 py-3 flex items-center justify-between">
+    <a href="../../" class="flex items-center gap-2">
+      <img src="../../assets/images/logo/logo.png" alt="Aplikatif" class="h-8 w-auto" width="32" height="32" />
+    </a>
+    <a id="nav-wa-btn" href="#" target="_blank"
+       class="bg-brand-emerald text-white text-sm font-semibold px-4 py-2 rounded-full shadow-sm active:scale-95 transition">
+      Konsultasi Gratis
+    </a>
+  </nav>
+
+  <!-- BACK LINK -->
+  <div class="px-5 py-3 border-b border-gray-100">
+    <a href="../" class="text-brand-indigo text-sm hover:underline">← Kembali ke semua contoh aplikasi</a>
+  </div>
+
+  <!-- CONTENT (diisi JS) -->
+  <div id="page-content" class="min-h-screen"></div>
+
+  <!-- 404 fallback -->
+  <div id="not-found" class="hidden px-5 py-20 text-center">
+    <p class="text-2xl font-bold text-brand-dark mb-3">Aplikasi tidak ditemukan</p>
+    <p class="text-gray-500 mb-6">Halaman yang kamu cari tidak tersedia.</p>
+    <a href="../" class="text-brand-indigo font-semibold underline">← Lihat semua contoh aplikasi</a>
+  </div>
+
+  <!-- WA FLOAT -->
+  <a id="wa-float-btn" href="#" target="_blank"
+     class="wa-float flex items-center justify-center w-14 h-14 bg-brand-emerald rounded-full shadow-xl">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.198-1.447A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.378l-.36-.214-3.68.859.924-3.574-.234-.368A9.818 9.818 0 1112 21.818z"/>
+    </svg>
+  </a>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init','1823575268352823');
+    fbq('track','PageView');
+  </script>
+
+  <script src="../../assets/js/config.js"></script>
+  <script src="../../assets/js/apps-data.js"></script>
+  <script>
+    // Deteksi slug dari URL: /contoh-aplikasi/keuangan-sederhana/
+    var pathParts = window.location.pathname.replace(/\/$/, '').split('/');
+    var slug = pathParts[pathParts.length - 1];
+    var app = APPS_DATA.find(function(a) { return a.slug === slug; });
+
+    var navWA = document.getElementById('nav-wa-btn');
+    var floatWA = document.getElementById('wa-float-btn');
+
+    if (!app) {
+      document.getElementById('not-found').classList.remove('hidden');
+      navWA.href = buildWALink(WA_PESAN.default);
+      floatWA.href = buildWALink(WA_PESAN.default);
+    } else {
+      document.title = app.nama + ' — Aplikatif';
+      document.querySelector('meta[name="description"]').content = app.deskripsi_singkat + ' | Aplikatif';
+
+      var waLink = buildWALink(WA_PESAN.dariDetail(app.nama));
+      navWA.href = buildWALink(WA_PESAN.default);
+      floatWA.href = waLink;
+
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', {content_type: 'app_detail', content_name: app.nama});
+      }
+
+      // Related apps
+      var related = APPS_DATA.filter(function(a) {
+        return a.slug !== slug && a.kategori === app.kategori;
+      }).slice(0, 3);
+      if (related.length === 0) {
+        related = APPS_DATA.filter(function(a) { return a.slug !== slug; }).slice(0, 2);
+      }
+
+      var fiturHTML = app.fitur_utama.map(function(f) {
+        return '<li class="flex items-start gap-3 text-sm text-gray-700">'
+          + '<span class="text-brand-emerald font-bold mt-0.5 flex-shrink-0">✓</span>' + f + '</li>';
+      }).join('');
+
+      var relatedHTML = related.map(function(r) {
+        return '<a href="../' + r.slug + '/" class="block bg-white border border-gray-100 rounded-xl p-4 card-hover">'
+          + '<p class="text-xs text-brand-indigo font-semibold mb-1">' + r.kategori + '</p>'
+          + '<p class="font-bold text-sm text-brand-dark mb-1">' + r.nama + '</p>'
+          + '<p class="text-gray-500 text-xs">' + r.deskripsi_singkat + '</p>'
+          + '</a>';
+      }).join('');
+
+      document.getElementById('page-content').innerHTML =
+
+        // Hero
+        '<section class="gradient-hero text-white px-5 pt-10 pb-12 text-center">'
+          + '<span class="inline-block bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">' + app.kategori + '</span>'
+          + '<h1 class="text-2xl font-extrabold mb-3">' + app.nama + '</h1>'
+          + '<p class="text-white/80 text-sm mb-6 max-w-xs mx-auto">' + app.deskripsi_panjang + '</p>'
+          + '<div class="flex flex-wrap justify-center gap-3">'
+            + '<a href="' + app.demo_url + '" target="_blank" rel="noopener noreferrer"'
+              + ' class="inline-flex items-center gap-2 bg-brand-emerald text-white font-bold px-6 py-3 rounded-full shadow active:scale-95 transition"'
+              + ' onclick="if(typeof fbq!==\'undefined\') fbq(\'trackCustom\',\'TryDemo\',{app_slug:\'' + app.slug + '\'})">'
+              + '📱 Coba Demo Sekarang'
+            + '</a>'
+            + '<a href="' + waLink + '" target="_blank"'
+              + ' class="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white font-semibold px-6 py-3 rounded-full transition"'
+              + ' onclick="if(typeof fbq!==\'undefined\') fbq(\'track\',\'Contact\',{source:\'app_detail_hero\',app_slug:\'' + app.slug + '\'})">'
+              + '💬 Tanya via WhatsApp'
+            + '</a>'
+          + '</div>'
+          + '<p class="text-white/50 text-xs mt-3">Gratis · Tanpa daftar · Langsung bisa dicoba</p>'
+        + '</section>'
+
+        // Screenshot
+        + '<section class="bg-brand-light px-5 py-8">'
+          + '<div class="max-w-sm mx-auto">'
+            + '<div class="bg-gray-200 rounded-2xl overflow-hidden h-48 flex items-center justify-center">'
+              + (app.thumbnail
+                ? '<img src="' + app.thumbnail + '" alt="' + app.nama + '" class="w-full h-full object-cover" onerror="this.parentElement.innerHTML=\'<p class=text-gray-400 text-sm>Screenshot segera tersedia</p>\'">'
+                : '<p class="text-gray-400 text-sm">Screenshot segera tersedia</p>')
+            + '</div>'
+          + '</div>'
+        + '</section>'
+
+        // Fitur utama
+        + '<section class="px-5 py-10">'
+          + '<div class="max-w-sm mx-auto">'
+            + '<h2 class="font-extrabold text-lg text-brand-dark mb-5">Fitur Utama</h2>'
+            + '<ul class="space-y-3">' + fiturHTML + '</ul>'
+          + '</div>'
+        + '</section>'
+
+        // Estimasi harga
+        + '<section class="bg-brand-light px-5 py-10">'
+          + '<div class="max-w-sm mx-auto">'
+            + '<h2 class="font-extrabold text-lg text-brand-dark mb-4">Estimasi Harga</h2>'
+            + '<p class="text-brand-emerald font-extrabold text-2xl mb-1">' + app.estimasi_harga + '</p>'
+            + '<p class="text-gray-500 text-sm mb-1">Sekali bayar untuk template dasar</p>'
+            + '<p class="text-gray-500 text-sm mb-1">+ Hosting bulanan (gratis 3 bulan pertama)</p>'
+            + '<p class="text-gray-500 text-sm">Kustomisasi tambahan: diskusi sesuai kebutuhan</p>'
+          + '</div>'
+        + '</section>'
+
+        // CTA
+        + '<section class="gradient-hero px-5 py-12 text-center text-white">'
+          + '<h2 class="text-xl font-extrabold mb-2">Tertarik pesan aplikasi ini?</h2>'
+          + '<p class="text-white/80 text-sm mb-6">Konsultasi gratis, tanpa komitmen</p>'
+          + '<a href="' + waLink + '" target="_blank"'
+            + ' class="inline-flex items-center gap-2 bg-white text-brand-indigo font-bold px-7 py-3.5 rounded-full shadow-lg active:scale-95 transition"'
+            + ' onclick="if(typeof fbq!==\'undefined\') fbq(\'track\',\'Contact\',{source:\'app_detail_cta\',app_slug:\'' + app.slug + '\'})">'
+            + '<svg class="w-5 h-5 text-brand-emerald" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.118 1.523 5.847L.057 23.882l6.198-1.447A11.955 11.955 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.015-1.378l-.36-.214-3.68.859.924-3.574-.234-.368A9.818 9.818 0 1112 21.818z"/></svg>'
+            + 'Pesan Aplikasi Ini via WhatsApp'
+          + '</a>'
+          + '<p class="text-white/50 text-xs mt-3">Respon dalam 1 jam kerja · Tanpa minimal order</p>'
+        + '</section>'
+
+        // Related
+        + (related.length > 0
+          ? '<section class="px-5 py-10 bg-brand-light">'
+              + '<div class="max-w-sm mx-auto">'
+                + '<h2 class="font-bold text-sm text-gray-400 uppercase tracking-wider mb-4">Aplikasi Serupa</h2>'
+                + '<div class="space-y-3">' + relatedHTML + '</div>'
+              + '</div>'
+            + '</section>'
+          : '')
+
+        // Footer
+        + '<footer class="px-5 pt-8 pb-6 border-t border-gray-100 bg-gray-50">'
+          + '<div class="max-w-sm mx-auto text-center">'
+            + '<p class="text-brand-indigo font-bold text-lg mb-1">aplikatif<span class="text-brand-emerald">.</span></p>'
+            + '<p class="text-gray-400 text-xs mb-3">Bikin aplikasi dari excel, Mulai dari Rp.75.000</p>'
+            + '<a href="https://wa.me/6285646645065" target="_blank" class="text-brand-emerald text-sm font-semibold">0856-4664-5065</a>'
+            + '<p class="text-gray-300 text-xs mt-4">© 2026 Aplikatif — CV. Lumbung Inovasi Digital. All rights reserved.</p>'
+          + '</div>'
+        + '</footer>';
+    }
+  </script>
+
+</body>
+</html>
