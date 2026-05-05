@@ -54,7 +54,8 @@ var APPS_DATA = [
       'Reminder pembayaran otomatis',
       'Database klien',
     ],
-    demo_url: 'https://demo-invoice.aplikatif.com', // TODO: deploy demo
+    demo_url: 'https://invoice.aplikatif.com/',
+    demo_live: true,
     cocok_untuk: ['Freelancer', 'Konsultan', 'Agency', 'Vendor'],
     estimasi_harga: 'Mulai Rp 150.000',
   },
